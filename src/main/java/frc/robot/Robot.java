@@ -121,7 +121,8 @@ public class Robot extends TimedRobot
     if (m_autonomousCommand != null)
     {
       m_autonomousCommand.cancel();
-    } else {
+    } else
+    {
       CommandScheduler.getInstance().cancelAll();
     }
     m_robotContainer.setDriveMode();

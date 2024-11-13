@@ -50,6 +50,10 @@ public class Vision
   public static final AprilTagFieldLayout fieldLayout                     = AprilTagFieldLayout.loadField(
       AprilTagFields.k2024Crescendo);
   /**
+   * Ambiguity defined as a value between (0,1). Used in {@link Vision#filterPose}.
+   */
+  private final       double              maximumAmbiguity = 0.25;
+  /**
    * Photon Vision Simulation
    */
   public              VisionSystemSim     visionSim;
@@ -61,10 +65,6 @@ public class Vision
    * Current pose from the pose estimator using wheel odometry.
    */
   private             Supplier<Pose2d>    currentPose;
-  /**
-   * Ambiguity defined as a value between (0,1). Used in {@link Vision#filterPose}.
-   */
-  private final double maximumAmbiguity = 0.25;
   /**
    * Field from {@link swervelib.SwerveDrive#field}
    */
